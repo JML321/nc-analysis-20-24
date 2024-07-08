@@ -1,6 +1,16 @@
+
+# Coefficients for added data (y0): [ 9.91035196e-05 -2.27601966e-03  1.62435112e-01]
+# Intercept for added data (y0): 0.43680339768592946
+# Coefficients for added data (y1): [ 5.30625148e-05 -3.36201453e-03  5.53690929e-01]
+# Intercept for added data (y1): 0.21407100207017415
+# Coefficients for removed data (y0): [-1.12734129e-05 -4.23893093e-04  4.84895150e-03]
+# Intercept for removed data (y0): 0.06869529989858339
+# Coefficients for removed data (y1): [ 3.84936967e-05 -2.47828483e-04 -7.77327803e-02]
+# Intercept for removed data (y1): 0.187181164996834
+
+
 import pandas as pd
-from sklearn.linear_model import LinearRegression, Lasso, Ridge
-from sklearn.metrics import mean_squared_error
+from sklearn.linear_model import LinearRegression
 import numpy as np
 
 # File Paths
@@ -19,7 +29,6 @@ removed_inference_df = pd.read_excel(removed_inference_path)
 
 # Prepare Data
 input_columns = ['d0', 'd1', 'd2']
-target_columns = ['f0', 'f1', 'i0', 'i1']
 
 def prepare_data(df):
     X = df[input_columns]
@@ -41,11 +50,15 @@ model_y1_added = train_model(X_added, y1_added)
 model_y0_removed = train_model(X_removed, y0_removed)
 model_y1_removed = train_model(X_removed, y1_removed)
 
-# Print Coefficients
+# Print Coefficients and Intercepts
 print("Coefficients for added data (y0):", model_y0_added.coef_)
+print("Intercept for added data (y0):", model_y0_added.intercept_)
 print("Coefficients for added data (y1):", model_y1_added.coef_)
+print("Intercept for added data (y1):", model_y1_added.intercept_)
 print("Coefficients for removed data (y0):", model_y0_removed.coef_)
+print("Intercept for removed data (y0):", model_y0_removed.intercept_)
 print("Coefficients for removed data (y1):", model_y1_removed.coef_)
+print("Intercept for removed data (y1):", model_y1_removed.intercept_)
 
 # Model Goals for Output
 def calculate_metrics(pred, actual):
@@ -58,8 +71,11 @@ def calculate_metrics(pred, actual):
     return avg_delta, std_delta, total_sum, min_delta, max_delta
 
 def evaluate_model(model_y0, model_y1, X, df, description):
-    pred_y0 = model_y0.predict(X) * df['i0'] + df['i0']
-    pred_y1 = model_y1.predict(X) * df['i1'] + df['i1']
+    pred_delta_y0 = model_y0.predict(X)
+    pred_delta_y1 = model_y1.predict(X)
+    
+    pred_y0 = pred_delta_y0 * df['i0'] + df['i0']
+    pred_y1 = pred_delta_y1 * df['i1'] + df['i1']
 
     avg_delta_y0, std_delta_y0, total_sum_y0, min_delta_y0, max_delta_y0 = calculate_metrics(pred_y0, df['i0'])
     avg_delta_y1, std_delta_y1, total_sum_y1, min_delta_y1, max_delta_y1 = calculate_metrics(pred_y1, df['i1'])
@@ -70,16 +86,22 @@ def evaluate_model(model_y0, model_y1, X, df, description):
     print(f"Target Avg Delta for f0-i0: 5% ± 10% | Actual: {avg_delta_y0:.2%} ± {std_delta_y0:.2%}")
     print(f"Target Avg Delta for f1-i1: 17% ± 11% | Actual: {avg_delta_y1:.2%} ± {std_delta_y1:.2%}")
 
+    # Add predicted deltas and final predictions to DataFrame for saving
+    df['pred_delta_y0'] = pred_delta_y0
+    df['pred_delta_y1'] = pred_delta_y1
+    df['f0_pred'] = pred_y0
+    df['f1_pred'] = pred_y1
+
     return pred_y0, pred_y1
 
 pred_y0_added, pred_y1_added = evaluate_model(model_y0_added, model_y1_added, added_inference_df[input_columns], added_inference_df, "Added Data")
 pred_y0_removed, pred_y1_removed = evaluate_model(model_y0_removed, model_y1_removed, removed_inference_df[input_columns], removed_inference_df, "Removed Data")
 
 # Save Predictions to New Excel Files
-def save_predictions(df, pred_y0, pred_y1, path):
-    df['f0_pred'] = pred_y0
-    df['f1_pred'] = pred_y1
+def save_predictions(df, path):
+    # Ensure the necessary columns are included in the final output
+    df = df[['d0', 'd1', 'd2', 'i0', 'i1', 'pred_delta_y0', 'pred_delta_y1', 'f0_pred', 'f1_pred']]
     df.to_excel(path, index=False)
 
-save_predictions(added_inference_df, pred_y0_added, pred_y1_added, new_added_inference_path)
-save_predictions(removed_inference_df, pred_y0_removed, pred_y1_removed, new_removed_inference_path)
+save_predictions(added_inference_df, new_added_inference_path)
+save_predictions(removed_inference_df, new_removed_inference_path)

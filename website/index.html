@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NC Electorate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>North Carolina's Changing Electorate in Five Pages</h1> <!-- Charting Change -->
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link" data-page="overall-change">Overall Change</a></li>
+                <li><a href="#" class="nav-link active" data-page="new-electorate">New Voters</a></li>
+                <li><a href="#" class="nav-link" data-page="removed-electorate">Removed Voters</a></li>
+                <li><a href="#" class="nav-link" data-page="interactive-maps">Interactive Maps</a></li>
+                <li><a href="#" class="nav-link" data-page="who-has-advantage">Who Has the Advantage</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <!-- Page 1 -->
+        <section class="page" id="overall-change">
+            <h3 class="fs">The Change Among Registered Voters from 
+                Nov '20 to Nov '24 Will Be Significant </h3>
+            <img src="images/first-page-chart.png" alt="Overall Change" class="graphs first-page-chart">
+            <ul>
+                <li>Chart inspired by Bloomberg's <a href="https://www.bloomberg.com/graphics/2024-new-eligible-voters-will-decide-trump-biden-rematch/?ai=eyJpc1N1YnNjcmliZWQiOnRydWUsImFydGljbGVSZWFkIjpmYWxzZSwiYXJ0aWNsZUNvdW50IjowLCJ3YWxsSGVpZ2h0IjoxfQ==" target="_blank">
+                    article</a> on changing eligible voting population </li>
+                <li>Data and projections are for the voters found in the North
+                     Carolina’s (NC’s) voter file </li>
+            </ul>                  
+            <div class="arrow right-arrow">&#9654;</div>
+        </section>
+        
+        <!-- Page 2 -->
+        <section class="page" id="new-electorate">
+            <h3 class="fs">Added Voters and "Aged In" Voters (18-21 Years Old) 
+                relative to the 2020 Presidential Margin </h3>
+            <div class="arrow left-arrow">&#9664;</div>
+            <img src="images/stacked-bar-added.png" alt="New Electorate">
+            <h3 class="fs">Added Voter Breakdown for May 2024 and 
+                Last Three Presidential Cycles </h3>
+            <div class="arrow right-arrow">&#9654;</div>
+        </section>
+
+
+        <!-- Page 3 -->
+        <section class="page" id="removed-electorate">
+            <div class="arrow left-arrow">&#9664;</div>
+            <img src="images/chart3.png" alt="Removed Electorate">
+            <p>Information about the removed electorate in NC since November 2020.</p>
+            <div class="arrow right-arrow">&#9654;</div>
+        </section>
+
+
+        <!-- Page 4 -->
+        <section class="page" id="interactive-maps">
+            <div class="arrow left-arrow">&#9664;</div>
+            <img src="images/chart4.png" alt="Interactive Maps">
+            <p>Interactive maps showing NC's electorate changes since November 2020.</p>
+            <div class="arrow right-arrow">&#9654;</div>
+        </section>
+
+
+        <!-- Page 5 -->
+        <section class="page" id="who-has-advantage">
+            <div class="arrow left-arrow">&#9664;</div>
+            <img src="images/chart5.png" alt="Who Has the Advantage">
+            <p>Analysis of which party has the advantage in NC since November 2020.</p>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

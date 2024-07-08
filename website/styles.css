@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+/* This is for the purple rectangle at top */
+header {
+    background-color: #545479;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    height: 85px;
+    margin-left: -30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    text-align: left;
+    padding: 0;
+    margin-left: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.fs {
+    font-size: 1.4em;
+    font-weight: bold;
+    /* Move the text higher */
+    margin-top: -180px;
+}
+
+/* styles.css */
+#overall-change {
+    margin-top: 200px; /* Adjust this value as needed */
+}
+
+.graphs {
+    margin-top: 50px;
+}
+
+/* styles.css */
+.first-page-chart {
+    width: 60%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure it's treated as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+nav ul li {
+    flex: 1;
+    min-width: 120px; /* Adjust as needed to prevent items from being too small */
+    margin: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: font-weight 0.3s, color 0.3s;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    color: #5f97d7;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.page {
+    display: none;
+    text-align: center;
+    width: 100%;
+    margin-top: 200px; /* Adjust this value as needed */
+}
+
+.page img {
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+.page p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    cursor: pointer;
+    user-select: none;
+    color: #333;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+/* Specific styles for bullet points in main content */
+.page ul {
+    list-style-type: disc;
+    padding-left: 0;
+    font-size: 1.17em;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 80%; /* Limit the width to allow shifting left */
+    margin-left: -15%; /* Shift the entire list slightly to the left */
+}
+
+.page ul li {
+    text-align: left;
+    margin-bottom: 5px;
+    padding-left: 5px; /* Reduce padding to bring text closer to bullets */
+}
