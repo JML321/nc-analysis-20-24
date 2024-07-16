@@ -1,3 +1,7 @@
+:root {
+    --header-height: 115px; /* Define the header height variable */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,14 +12,17 @@ body {
     background-color: #ffffff;
 }
 
-/* This is for the purple rectangle at top */
 header {
     background-color: #545479;
     color: white;
     padding: 20px;
     text-align: center;
-    height: 85px;
-    margin-left: -30px;
+    height: 84px;
+    width: 100%;
+    position: fixed; /* Make the header fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the header is above other elements */
 }
 
 header h1 {
@@ -36,14 +43,9 @@ nav ul {
     text-align: center;
 }
 
-
-
-
 .fs {
     font-size: 1.4em;
     font-weight: bold;
-    /* Move the text higher */
-    /* margin-top: -180px; */
     margin-top: -10em;
 }
 
@@ -51,109 +53,101 @@ nav ul {
     font-size: 1.4em;
     font-weight: bold;
     position: absolute;
-    top: 5px; /* Adjust this value to set the desired distance from the top of its container */
+    top: calc(var(--header-height) + 5px); /* Adjust top position using the variable */
     left: 0;
     right: 0;
     text-align: center; /* Centers the text horizontally */
 }
 
-
-
 .stacked {
-        width: 665px; 
-        height: 350px;
-        /* height:400px; */
-        display: block;
-        margin: 0 auto;
-        position: absolute;
-        top: 90px; /* Adjust this value to set the desired distance from the top of its container */
-        left: 0;
-        right: 0;
-        text-align: center; /* Centers the text horizontally */
-    }
+    width: 665px;
+    height: 350px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: calc(var(--header-height) + 90px); /* Adjust top position using the variable */
+    left: 0;
+    right: 0;
+    text-align: center; /* Centers the text horizontally */
+}
 
 .custom-line {
-        border: 0;
-        border-top: 1px solid #0000007c; /* Change the color as needed */
-        width: 60%; /* Adjust the width as needed */
-        margin: 20px auto; /* Adjust the margin as needed */
-        position: absolute;
-        top: 450px; 
-        right: 40px;
-        left: 10px;
-    }
+    border: 0;
+    border-top: 1px solid #0000007c;
+    width: 60%;
+    margin: 20px auto;
+    position: absolute;
+    top: calc(var(--header-height) + 450px); /* Adjust top position using the variable */
+    right: 40px;
+    left: 10px;
+}
 
 .s2 {
     font-size: 1.4em;
     font-weight: bold;
     position: absolute;
-    top: 470px; /* Adjust this value to set the desired distance from the top of its container */
+    top: calc(var(--header-height) + 470px); /* Adjust top position using the variable */
     left: 0;
     right: 0;
     text-align: center; /* Centers the text horizontally */
 }
 
 .pies {
-    width: 800px; 
+    width: 800px;
     height: auto;
     display: block;
     margin: 0 auto;
     position: absolute;
-    top: 565px; /* Adjust this value to set the desired distance from the top of its container */
+    top: calc(var(--header-height) + 565px); /* Adjust top position using the variable */
     left: 0;
     right: -150px;
     text-align: center; /* Centers the text horizontally */
 }
 
 .pies-v2 {
-    width: 750px; 
+    width: 750px;
     height: auto;
     display: block;
     margin: 0 auto;
     position: absolute;
-    top: 565px; /* Adjust this value to set the desired distance from the top of its container */
+    top: calc(var(--header-height) + 565px); /* Adjust top position using the variable */
     left: 0;
     right: -150px;
     text-align: center; /* Centers the text horizontally */
 }
 
-
-/* styles.css */
 #overall-change {
     margin-top: 240px; /* Adjust this value as needed */
 }
 
-/* styles.css */
 .first-chart {
-    width: 740px; 
+    width: 740px;
     height: 360px;
-    /* height:375px; */
     display: block;
     margin: 0 auto;
     position: absolute;
-    top: 70px; /* Adjust this value to set the desired distance from the top of its container */
+    top: calc(var(--header-height) + 70px); /* Adjust top position using the variable */
     left: 0;
     right: 0;
-    text-align: center; 
+    text-align: center;
 }
 
 .first-bullets {
     margin-top: 205px; /* Adjust this value as needed to push the list down */
     margin-left: 150px;
-    margin-right:50px
+    margin-right: 40px;
 }
 
 iframe {
-    /* margin-top: -100px; Adjust this value to cut off the top part */
-    width: 650px; 
+    width: 650px;
     height: 300px;
     display: block;
     margin: 0 auto;
     position: absolute;
-    top: 75px; /* Adjust this value to set the desired distance from the top of its container */
+    top: calc(var(--header-height) + 75px); /* Adjust top position using the variable */
     left: 0;
     right: 0;
-    text-align: center; /* Centers the text horizontally */
+    text-align: center;
     border: none;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adds a slight fade effect */
 }
@@ -162,30 +156,28 @@ iframe {
     font-size: 1.4em;
     font-weight: bold;
     position: absolute;
-    top: 390px; /* Adjust this value to set the desired distance from the top of its container */
+    top: calc(var(--header-height) + 390px); /* Adjust top position using the variable */
     left: 0;
     right: 0;
     text-align: center; /* Centers the text horizontally */
 }
 
-/* map bullet points */
 .push-down {
     margin-top: 200px; /* Adjust this value as needed to push the list down */
     margin-left: 75px;
 }
 
 .donuts {
-        width: auto; 
-        height: 360px;
-        /* height:370px; */
-        display: block;
-        margin: 0 auto;
-        position: absolute;
-        top: 70px; /* Adjust this value to set the desired distance from the top of its container */
-        left: 0;
-        right: 0;
-        text-align: center; /* Centers the text horizontally */
-    }
+    width: auto;
+    height: 360px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: calc(var(--header-height) + 70px); /* Adjust top position using the variable */
+    left: 0;
+    right: 0;
+    text-align: center; /* Centers the text horizontally */
+}
 
 .start {
     margin-top: 250px;
@@ -196,7 +188,7 @@ iframe {
 .push-donut-bullets {
     margin-top: 230px; /* Adjust this value as needed to push the list down */
     margin-left: 215px;
-    margin-right:50px
+    margin-right: 50px;
 }
 
 nav ul li {
@@ -225,7 +217,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 0px;
+    padding-top: var(--header-height); /* Adjust padding-top using the variable */
 }
 
 .page {
@@ -269,7 +261,6 @@ main {
     }
 }
 
-
 .arrow {
     position: fixed;
     top: 50%;
@@ -288,7 +279,6 @@ main {
     right: 20px;
 }
 
-/* Specific styles for bullet points in main content */
 .page ul {
     list-style-type: disc;
     padding-left: 0;
@@ -306,9 +296,6 @@ main {
     padding-left: 5px; /* Reduce padding to bring text closer to bullets */
 }
 
-
-
-/* Pop-up styles */
 .popup {
     display: none;
     position: fixed;
@@ -317,13 +304,13 @@ main {
     transform: translate(-50%, -50%);
     background-color: #f0f0f0;
     color: #333333f3;
-    padding: 23px 0px 10px 5px;  /* Add padding to the top */
+    padding: 23px 0px 10px 5px;
     border-radius: 10px;
     z-index: 1000;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.336);
     text-align: center;
-    width: 80%;  /* Optional: Adjust the width if necessary */
-    max-width: 400px;  /* Optional: Set a maximum width */
+    width: 80%; /* Optional: Adjust the width if necessary */
+    max-width: 400px; /* Optional: Set a maximum width */
 }
 
 .popup p {
