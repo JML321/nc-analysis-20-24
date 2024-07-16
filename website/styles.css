@@ -36,28 +36,167 @@ nav ul {
     text-align: center;
 }
 
+
+
+
 .fs {
     font-size: 1.4em;
     font-weight: bold;
     /* Move the text higher */
-    margin-top: -180px;
+    /* margin-top: -180px; */
+    margin-top: -10em;
 }
+
+.s1 {
+    font-size: 1.4em;
+    font-weight: bold;
+    position: absolute;
+    top: 5px; /* Adjust this value to set the desired distance from the top of its container */
+    left: 0;
+    right: 0;
+    text-align: center; /* Centers the text horizontally */
+}
+
+
+
+.stacked {
+        width: 665px; 
+        height: 350px;
+        /* height:400px; */
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        top: 90px; /* Adjust this value to set the desired distance from the top of its container */
+        left: 0;
+        right: 0;
+        text-align: center; /* Centers the text horizontally */
+    }
+
+.custom-line {
+        border: 0;
+        border-top: 1px solid #0000007c; /* Change the color as needed */
+        width: 60%; /* Adjust the width as needed */
+        margin: 20px auto; /* Adjust the margin as needed */
+        position: absolute;
+        top: 450px; 
+        right: 40px;
+        left: 10px;
+    }
+
+.s2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    position: absolute;
+    top: 470px; /* Adjust this value to set the desired distance from the top of its container */
+    left: 0;
+    right: 0;
+    text-align: center; /* Centers the text horizontally */
+}
+
+.pies {
+    width: 800px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 565px; /* Adjust this value to set the desired distance from the top of its container */
+    left: 0;
+    right: -150px;
+    text-align: center; /* Centers the text horizontally */
+}
+
+.pies-v2 {
+    width: 750px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 565px; /* Adjust this value to set the desired distance from the top of its container */
+    left: 0;
+    right: -150px;
+    text-align: center; /* Centers the text horizontally */
+}
+
 
 /* styles.css */
 #overall-change {
-    margin-top: 200px; /* Adjust this value as needed */
-}
-
-.graphs {
-    margin-top: 50px;
+    margin-top: 240px; /* Adjust this value as needed */
 }
 
 /* styles.css */
-.first-page-chart {
-    width: 60%;
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure it's treated as a block element */
-    margin: 0 auto; /* Center the image horizontally */
+.first-chart {
+    width: 740px; 
+    height: 360px;
+    /* height:375px; */
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 70px; /* Adjust this value to set the desired distance from the top of its container */
+    left: 0;
+    right: 0;
+    text-align: center; 
+}
+
+.first-bullets {
+    margin-top: 205px; /* Adjust this value as needed to push the list down */
+    margin-left: 150px;
+    margin-right:50px
+}
+
+iframe {
+    /* margin-top: -100px; Adjust this value to cut off the top part */
+    width: 650px; 
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 75px; /* Adjust this value to set the desired distance from the top of its container */
+    left: 0;
+    right: 0;
+    text-align: center; /* Centers the text horizontally */
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adds a slight fade effect */
+}
+
+.s3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    position: absolute;
+    top: 390px; /* Adjust this value to set the desired distance from the top of its container */
+    left: 0;
+    right: 0;
+    text-align: center; /* Centers the text horizontally */
+}
+
+/* map bullet points */
+.push-down {
+    margin-top: 200px; /* Adjust this value as needed to push the list down */
+    margin-left: 75px;
+}
+
+.donuts {
+        width: auto; 
+        height: 360px;
+        /* height:370px; */
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        top: 70px; /* Adjust this value to set the desired distance from the top of its container */
+        left: 0;
+        right: 0;
+        text-align: center; /* Centers the text horizontally */
+    }
+
+.start {
+    margin-top: 250px;
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+.push-donut-bullets {
+    margin-top: 230px; /* Adjust this value as needed to push the list down */
+    margin-left: 215px;
+    margin-right:50px
 }
 
 nav ul li {
@@ -86,6 +225,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 0px;
 }
 
 .page {
@@ -105,14 +245,39 @@ main {
     color: #555;
 }
 
+.scroll-arrow {
+    position: fixed; /* Keep the arrow fixed in the viewport */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4em; /* Increase the size of the arrow */
+    color: #333;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 1000; /* Ensure the arrow is on top of other elements */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+
 .arrow {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 0px));
     font-size: 2em;
     cursor: pointer;
     user-select: none;
-    color: #333;
+    color: #33333394;
 }
 
 .left-arrow {
@@ -127,7 +292,7 @@ main {
 .page ul {
     list-style-type: disc;
     padding-left: 0;
-    font-size: 1.17em;
+    font-size: 1.07em;
     text-align: center;
     display: inline-block;
     margin: 0 auto;
@@ -139,4 +304,49 @@ main {
     text-align: left;
     margin-bottom: 5px;
     padding-left: 5px; /* Reduce padding to bring text closer to bullets */
+}
+
+
+
+/* Pop-up styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    color: #333333f3;
+    padding: 23px 0px 10px 5px;  /* Add padding to the top */
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.336);
+    text-align: center;
+    width: 80%;  /* Optional: Adjust the width if necessary */
+    max-width: 400px;  /* Optional: Set a maximum width */
+}
+
+.popup p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.popup button {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    background-color: transparent;
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#close-width-popup {
+    left: 2px;
+}
+
+#close-mobile-popup {
+    left: -10px;
 }

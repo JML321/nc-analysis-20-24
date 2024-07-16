@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NC Electorate</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="images/favicon.webp">
 </head>
 <body>
     <header>
-        <h1>North Carolina's Changing Electorate in Five Pages</h1> <!-- Charting Change -->
+        <h1>North Carolina's Changing Electorate and 2020 Election Analysis</h1> <!-- Charting Change -->
         <nav>
             <ul>
-                <li><a href="#" class="nav-link" data-page="overall-change">Overall Change</a></li>
-                <li><a href="#" class="nav-link active" data-page="new-electorate">New Voters</a></li>
+                <li><a href="#" class="nav-link active" data-page="overall-change">Overall Change</a></li>
+                <li><a href="#" class="nav-link" data-page="new-electorate">New Voters</a></li>
                 <li><a href="#" class="nav-link" data-page="removed-electorate">Removed Voters</a></li>
-                <li><a href="#" class="nav-link" data-page="interactive-maps">Interactive Maps</a></li>
+                <li><a href="#" class="nav-link" data-page="interactive-maps">2020 Election Map</a></li>
                 <li><a href="#" class="nav-link" data-page="who-has-advantage">Who Has the Advantage</a></li>
             </ul>
         </nav>
@@ -22,55 +23,103 @@
     <main id="main-content">
         <!-- Page 1 -->
         <section class="page" id="overall-change">
-            <h3 class="fs">The Change Among Registered Voters from 
-                Nov '20 to Nov '24 Will Be Significant </h3>
-            <img src="images/first-page-chart.png" alt="Overall Change" class="graphs first-page-chart">
+            <h3 class="s1">The Change Among Registered Voters from 
+                2020 to 2024 Will Be Significant </h3>
+            <img src="images/first-page-chart.png" alt="Overall Change" class="first-chart">
+            <div class = 'first-bullets'>
             <ul>
                 <li>Chart inspired by Bloomberg's <a href="https://www.bloomberg.com/graphics/2024-new-eligible-voters-will-decide-trump-biden-rematch/?ai=eyJpc1N1YnNjcmliZWQiOnRydWUsImFydGljbGVSZWFkIjpmYWxzZSwiYXJ0aWNsZUNvdW50IjowLCJ3YWxsSGVpZ2h0IjoxfQ==" target="_blank">
-                    article</a> on changing eligible voting population </li>
-                <li>Data and projections are for the voters found in the North
-                     Carolina’s (NC’s) voter file </li>
+                    article</a> on the changes in the eligible voting population </li>
+                <li>Data and projections are for voters in North
+                     Carolina’s <a href="https://www.ncsbe.gov/results-data/voter-registration-data" target="_blank">
+                        voter files</a> </li>
             </ul>                  
+            </div>
             <div class="arrow right-arrow">&#9654;</div>
         </section>
         
         <!-- Page 2 -->
         <section class="page" id="new-electorate">
-            <h3 class="fs">Added Voters and "Aged In" Voters (18-21 Years Old) 
-                relative to the 2020 Presidential Margin </h3>
+            <h3 class="s1">New Voters and Voters Aged 18-21 
+                Larger Than the 2020 Presidential Margin </h3>
+            <img src="images/stacked-bar-added.png" 
+                alt="New Electorate" class="stacked">
+            <hr class="custom-line">
+            <h3 class="s2">Added Voter Breakdown for May 2024 and 
+                Three Most Recent Election Cycles </h3>
+            <img src="images/added-pies.png" 
+                alt="added-pies" class="pies">
             <div class="arrow left-arrow">&#9664;</div>
-            <img src="images/stacked-bar-added.png" alt="New Electorate">
-            <h3 class="fs">Added Voter Breakdown for May 2024 and 
-                Last Three Presidential Cycles </h3>
             <div class="arrow right-arrow">&#9654;</div>
+            <div class="scroll-arrow">&#x2193;</div> <!-- Scroll arrow -->
         </section>
-
 
         <!-- Page 3 -->
-        <section class="page" id="removed-electorate">
+        <section class="page" id="new-electorate">
+            <h3 class="s1"> Removed and Deceased Voters
+                Larger Than the 2020 Presidential Margin </h3>
+            <img src="images/stacked-bar-removed.png" 
+                alt="New Electorate" class="stacked">
+            <hr class="custom-line">
+            <h3 class="s2"> Removed Voter Breakdown for May 2024 and 
+                Three Most Recent Election Cycles </h3>
+            <img src="images/removed-pies.png" 
+                alt="added-pies" class="pies-v2">
             <div class="arrow left-arrow">&#9664;</div>
-            <img src="images/chart3.png" alt="Removed Electorate">
-            <p>Information about the removed electorate in NC since November 2020.</p>
             <div class="arrow right-arrow">&#9654;</div>
+            <div class="scroll-arrow">&#x2193;</div> <!-- Scroll arrow -->
         </section>
-
 
         <!-- Page 4 -->
         <section class="page" id="interactive-maps">
+            <h3 class="s1"> 2020 North Carolina Presidential Election By County </h3>
+            <iframe src="nc_counties_map.html"></iframe>    
             <div class="arrow left-arrow">&#9664;</div>
-            <img src="images/chart4.png" alt="Interactive Maps">
-            <p>Interactive maps showing NC's electorate changes since November 2020.</p>
+            <div class="push-down">
+                <ul>
+                    <li><b>Biden:</b> the biggest vote margins were from Raleigh and Charlotte</li>
+                    <li><b>Trump:</b>the biggest vote margins were from regions next to Greensboro and Charlotte</li>
+                </ul>
+            </div>            
             <div class="arrow right-arrow">&#9654;</div>
         </section>
 
-
         <!-- Page 5 -->
         <section class="page" id="who-has-advantage">
+            <h3 class="s1"> Breakdown By Party Registration: GOP Has 
+                the Advantage </h3>
             <div class="arrow left-arrow">&#9664;</div>
-            <img src="images/chart5.png" alt="Who Has the Advantage">
-            <p>Analysis of which party has the advantage in NC since November 2020.</p>
+            <img src="images/page5-img.png" alt="Who Has the Advantage"
+            class="donuts">
+            <!-- <p class="start"> Trump has the likely edge: both parties have roughly the same 
+                number of first-time 2022 voters, and added voters, but Democrats have lost
+                over 100K more registered voters than Republicans.
+            </p> -->
+            <div class="push-donut-bullets">
+                <ul>
+                    <!-- <li><b>The GOP Advantage:</b> Comes from removed voters. Neither party has advantage for added voters or
+                            first-time voters in 2022.</li> -->
+                    <li><b>Major Caveat:</b> Party preference of the largest group, Unaffiliated/Other, is unknown.</li>
+                    </li>
+                </ul>
+            </div>                                
         </section>
     </main>
+
+    <!-- Pop-up for screen width below 700px -->
+    <div id="screen-width-popup" class="popup">
+        <p>For optimal viewing, please expand screen width
+        </p>
+        <button id="close-width-popup">X</button>
+    </div>
+
+    <!-- Pop-up for mobile or tablet devices -->
+    <div id="mobile-popup" class="popup">
+        <p>For optimal viewing, please use a laptop or desktop</p>
+        <button id="close-mobile-popup">X</button>
+    </div>
+
+
     <script src="scripts.js"></script>
 </body>
 </html>
